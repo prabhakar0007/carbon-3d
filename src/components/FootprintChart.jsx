@@ -1,8 +1,10 @@
+import React from 'react';
 import { LineChart, Line, XAxis, YAxis, Tooltip, ResponsiveContainer } from 'recharts';
+import PropTypes from 'prop-types';
 
 export default function FootprintChart({ data }) {
   return (
-    <div className="glass p-6 w-full">
+    <div className="glass p-6 w-full" role="figure" aria-label="Weekly carbon footprint trend">
       <h3 className="text-xl font-bold mb-2">📈 Weekly Trend</h3>
       <ResponsiveContainer width="100%" height={250}>
         <LineChart data={data}>
@@ -15,3 +17,6 @@ export default function FootprintChart({ data }) {
     </div>
   );
 }
+FootprintChart.propTypes = {
+  data: PropTypes.array.isRequired,
+};
